@@ -45,18 +45,13 @@ React.Children.map(this.props.children, child => {
 [css.js](src/css.js)
 
 ```js
-{
-    timestamp: css({
-        lineHeight: 2,
-        padding: '2px 0',
-        color: '#3B5998',
-        background: '#EDEFF4'
-    }),
-    namespace: css({
-        lineHeight: 2,
-        color: '#036F96'
-    })
-}
+css({
+    lineHeight: 2,
+    padding: '2px 0',
+    color: '#3B5998',
+    background: '#EDEFF4'
+});
+// → 'line-height:2px;padding:2px 0;color:#3B5998;background:#EDEFF4;'
 ```
 
 #### DOM Events
