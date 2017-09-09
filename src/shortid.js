@@ -31,7 +31,7 @@ const UNIQUE_RETRIES = 9999;
  * so it is up to you to check for uniqueness.
  * @return {String} friendly ID.
  */
-export const generate = (options) => {
+const generate = (options) => {
     const {
         alphabet = DEFAULT_ALPHABET,
         idLength = DEFAULT_ID_LENGTH
@@ -50,7 +50,7 @@ export const generate = (options) => {
  * @param  {Array} previous The list of previous ids to avoid.
  * @return {String} A unique ID, or `null` if one could not be generated.
  */
-export const generateUnique = (previous) => {
+const generateUnique = (previous) => {
     previous = previous || [];
     let retries = 0;
     let id;
@@ -66,4 +66,9 @@ export const generateUnique = (previous) => {
     }
 
     return id;
+};
+
+export default {
+    generate,
+    generateUnique
 };
