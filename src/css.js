@@ -47,7 +47,11 @@ const normalizeStyleValue = (name, value) => {
     return value;
 };
 
-export default (obj = {}) => Object.keys(obj).map(key => {
+const stringify = (obj = {}) => Object.keys(obj).map(key => {
     const val = obj[key];
     return `${normalizeVendorPrefix(key)}:${normalizeStyleValue(key, val)};`;
 }).join('');
+
+export default {
+    stringify
+};
