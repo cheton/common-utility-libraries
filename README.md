@@ -10,7 +10,7 @@ React.Children.map(this.props.children, child => {
     }
     
     return React.cloneElement(child, {
-        ref,
+        ...child.props,
         onClick: chainedFunction(
             child.props.onClick,
             this.handleClick
