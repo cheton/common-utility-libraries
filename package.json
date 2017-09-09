@@ -1,0 +1,25 @@
+{
+  "name": "@cheton/common-utility-libraries",
+  "version": "0.1.0",
+  "description": "Common utility libraries used in my projects.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cheton/common-utility-libraries.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cheton/common-utility-libraries/issues"
+  },
+  "homepage": "https://github.com/cheton/common-utility-libraries#readme",
+  "dependencies": {
+    "detect-browser": "^1.10.0",
+    "lodash": "^4.17.4",
+    "universal-logger": "^1.0.1",
+    "universal-logger-browser": "^1.0.2"
+  }
+}
