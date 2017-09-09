@@ -1,6 +1,51 @@
 # Common Utility Libraries
 
-#### EventEmitterStore
+### Chained Function
+[chained-function.js](src/chained-function.js)
+
+```js
+React.Children.map(this.props.children, child => {
+    if (!React.isValidElement(child)) {
+        return child;
+    }
+    
+    return React.cloneElement(child, {
+        ref,
+        onClick: chainedFunction(
+            child.props.onClick,
+            this.handleClick
+        )
+    });
+});
+```
+
+### CSS
+[css.js](src/css.js)
+
+```js
+css({
+    lineHeight: 2,
+    padding: '2px 0',
+    color: '#3B5998',
+    background: '#EDEFF4'
+});
+// → 'line-height:2px;padding:2px 0;color:#3B5998;background:#EDEFF4;'
+```
+
+### DOM Events
+[dom-events.js](src/dom-events.js)
+
+```js
+const onClick = (event) => {
+    preventDefault(event);
+    stopPropagation(event);
+};
+
+addEventListener(target, 'click', onClick);
+removeEventListener(target, 'click', onClick);
+```
+
+### Event Emitter Store
 [EventEmitterStore.js](src/EventEmitterStore.js)
 
 ```js
@@ -22,51 +67,16 @@ store.get('widget.console.minimized', false /* defaultValue */);
 store.replace('widget.console.lines', ['line 1', 'line 2', 'line 3']);
 ```
 
-#### Chained Function
-[chained-function.js](src/chained-function.js)
-
-```js
-React.Children.map(this.props.children, child => {
-    if (!React.isValidElement(child)) {
-        return child;
-    }
-    
-    return React.cloneElement(child, {
-        ref,
-        onClick: chainedFunction(
-            child.props.onClick,
-            this.handleClick
-        )
-    });
-});
-```
-
-#### CSS
-[css.js](src/css.js)
-
-```js
-css({
-    lineHeight: 2,
-    padding: '2px 0',
-    color: '#3B5998',
-    background: '#EDEFF4'
-});
-// → 'line-height:2px;padding:2px 0;color:#3B5998;background:#EDEFF4;'
-```
-
-#### DOM Events
-[dom-events.js](src/dom-events.js)
-
-#### Ensure Array
+### Ensure Array
 [ensure-array.js](src/ensure-array.js)
 
-#### Ensure Positive Number
+### Ensure Positive Number
 [ensure-positive-number.js](src/ensure-positive-number.js)
 
-#### Extend
+### Extend
 [extend.js](src/extend.js)
 
-#### Get
+### Get
 [get.js](src/get.js)
 
 #### Log
@@ -86,17 +96,14 @@ log.error(emoji.get('lightning_cloud'));
 
 ![image](https://cloud.githubusercontent.com/assets/447801/25939476/96bd5568-3665-11e7-9b6f-b96fe0dc73d8.png)
 
-#### Normalize Range
+### Normalize Range
 [normalize-range.js](src/normalize-range.js)
 
-#### Numeral
+### Numeral
 [numeral.js](src/numeral.js)
 
-#### Reset Context
+### Reset Context
 [reset-context.styl](src/reset-context.styl)
-
-https://www.paulirish.com/2012/box-sizing-border-box-ftw/
-https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
 ```css
 @import "./reset-context";
@@ -106,17 +113,21 @@ https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-pract
 }
 ```
 
-#### Short ID
+**Recommended Readings**
+* https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+* https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+### Short ID
 [shortid.js](src/shortid.js)
 
-#### Split Component Props
+### Split Component Props
 [split-component-props.js](src/split-component-props.js)
 
-#### Trim
+### Trim
 [trim.js](src/trim.js)
 
-#### Unique ID
+### Unique ID
 [uniqueid.js](src/uniqueid.js)
 
-#### Units
+### Units
 [units.js](src/units.js)
