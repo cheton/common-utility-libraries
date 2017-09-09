@@ -72,6 +72,20 @@ css({
 #### Log
 [log.js](src/log.js)
 
+See [universal-logger](https://github.com/cheton/universal-logger) and [universal-logger-browser](https://github.com/cheton/universal-logger-browser) for details.
+
+```js
+log.setLevel(TRACE);
+log.log(INFO, 'The logger has initialized');
+log.trace(emoji.get('mostly_sunny'));
+log.debug(emoji.get('sun_small_cloud'));
+log.info(emoji.get('barely_sunny'));
+log.warn(emoji.get('rain_cloud'));
+log.error(emoji.get('lightning_cloud'));
+```
+
+![image](https://cloud.githubusercontent.com/assets/447801/25939476/96bd5568-3665-11e7-9b6f-b96fe0dc73d8.png)
+
 #### Normalize Range
 [normalize-range.js](src/normalize-range.js)
 
@@ -80,6 +94,17 @@ css({
 
 #### Reset Context
 [reset-context.styl](src/reset-context.styl)
+
+https://www.paulirish.com/2012/box-sizing-border-box-ftw/
+https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
+
+```css
+@import "./reset-context";
+
+.container {
+    reset-context();
+}
+```
 
 #### Short ID
 [shortid.js](src/shortid.js)
