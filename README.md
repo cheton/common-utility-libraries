@@ -23,7 +23,7 @@ React.Children.map(this.props.children, child => {
 [css.js](src/css.js)
 
 ```js
-css({
+css.stringify({
     lineHeight: 2,
     padding: '2px 0',
     color: '#3B5998',
@@ -44,6 +44,12 @@ const onClick = (event) => {
 addEventListener(target, 'click', onClick);
 removeEventListener(target, 'click', onClick);
 ```
+
+### Ensure Array
+[ensure-array.js](src/ensure-array.js)
+
+### Ensure Positive Number
+[ensure-positive-number.js](src/ensure-positive-number.js)
 
 ### Event Emitter Store
 [EventEmitterStore.js](src/EventEmitterStore.js)
@@ -66,12 +72,6 @@ store.set('widget.console.minimized', true);
 store.get('widget.console.minimized', false /* defaultValue */);
 store.replace('widget.console.lines', ['line 1', 'line 2', 'line 3']);
 ```
-
-### Ensure Array
-[ensure-array.js](src/ensure-array.js)
-
-### Ensure Positive Number
-[ensure-positive-number.js](src/ensure-positive-number.js)
 
 ### Extend
 [extend.js](src/extend.js)
