@@ -102,6 +102,32 @@ log.error(emoji.get('lightning_cloud'));
 ### Numeral
 [numeral.js](src/numeral.js)
 
+### Random IP
+[random-ip.js](src/random-ip.js)
+
+```js
+> randomip('0.0.0.0');
+// → '108.52.74.162'
+> randomip('10.0.0.0');
+// → '10.102.167.63'
+> randomip('10.1.0.0');
+// → '10.1.105.93'
+> randomip('172.16.0.0');
+// → '172.16.130.7'
+```
+
+### Random Mac
+[random-mac.js](src/random-mac.js)
+
+```js
+> randommac();
+// → '54:52:00:d5:7d:ca'
+> randommac();
+// → '54:52:00:f7:b4:08'
+> randommac('10:FE:90');
+// → '10:FE:90:b9:90:76'
+```
+
 ### Reset Context
 [reset-context.styl](src/reset-context.styl)
 
