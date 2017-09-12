@@ -6,4 +6,4 @@ const ensurePositiveNumber = (value, minimumValue = 0) => {
     return Math.max(Number(value) || 0, minimumValue);
 };
 
-export default ensurePositiveNumber;
+module.exports = ensurePositiveNumber;

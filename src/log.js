@@ -12,4 +12,4 @@ const log = logger()
 
 log.enableStackTrace();
 
-export default log;
+module.exports = log;

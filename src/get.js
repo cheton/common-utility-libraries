@@ -38,4 +38,4 @@ const get = (function() {
     };
 })();
 
-export default get;
+module.exports = get;

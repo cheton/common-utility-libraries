@@ -8,4 +8,4 @@ const ensureArray = (...args) => {
     return [].concat(args);
 };
 
-export default ensureArray;
+module.exports = ensureArray;

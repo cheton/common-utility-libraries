@@ -13,4 +13,4 @@ const chainedFunction = (...funcs) => {
         }, null);
 };
 
-export default chainedFunction;
+module.exports = chainedFunction;

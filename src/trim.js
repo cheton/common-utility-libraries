@@ -8,4 +8,4 @@ const trim = (str, chars = ' \f\n\r\t\v') => {
     return str;
 };
 
-export default trim;
+module.exports = trim;

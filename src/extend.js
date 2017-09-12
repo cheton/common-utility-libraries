@@ -18,4 +18,4 @@ const extend = (target, ...sources) => {
     return output;
 };
 
-export default extend;
+module.exports = extend;

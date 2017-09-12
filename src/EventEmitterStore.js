@@ -57,4 +57,4 @@ class EventEmitterStore extends events.EventEmitter {
     }
 }
 
-export default EventEmitterStore;
+module.exports = EventEmitterStore;

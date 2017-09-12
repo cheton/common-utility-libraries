@@ -5,4 +5,4 @@ const uniqueid = (prefix = '', suffix = '') => {
     };
 };
 
-export default uniqueid;
+module.exports = uniqueid;

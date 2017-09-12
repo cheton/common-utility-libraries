@@ -68,7 +68,7 @@ const generateUnique = (previous) => {
     return id;
 };
 
-export default {
+module.exports = {
     generate,
     generateUnique
 };

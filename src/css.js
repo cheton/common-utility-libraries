@@ -52,6 +52,6 @@ const stringify = (obj = {}) => Object.keys(obj).map(key => {
     return `${normalizeVendorPrefix(key)}:${normalizeStyleValue(key, val)};`;
 }).join('');
 
-export default {
+module.exports = {
     stringify
 };

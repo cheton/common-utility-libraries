@@ -15,6 +15,6 @@ const parse = (qs = '') => {
     return query;
 };
 
-export default {
+module.exports = {
     parse
 };

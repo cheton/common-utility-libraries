@@ -11,7 +11,7 @@ function objectEntries(O) {
     );
 }
 
-export default function splitComponentProps(props, Component) {
+const splitComponentProps = (props, Component) => {
     const { propTypes: componentPropTypes } = Component;
     const parentProps = {};
     const childProps = {};
@@ -27,4 +27,6 @@ export default function splitComponentProps(props, Component) {
     });
 
     return [parentProps, childProps];
-}
+};
+
+module.exports = splitComponentProps;
