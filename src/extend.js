@@ -9,7 +9,7 @@ const extend = (target, ...sources) => {
         const source = sources[index];
         if (source !== undefined && source !== null) {
             for (let key in source) {
-                if (source.hasOwnProperty(key)) {
+                if (Object.prototype.hasOwnProperty.call(source, key)) {
                     output[key] = source[key];
                 }
             }
