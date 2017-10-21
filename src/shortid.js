@@ -31,14 +31,9 @@ const UNIQUE_RETRIES = 9999;
  * so it is up to you to check for uniqueness.
  * @return {String} friendly ID.
  */
-const generate = (options) => {
-    const {
-        alphabet = DEFAULT_ALPHABET,
-        idLength = DEFAULT_ID_LENGTH
-    } = { ...options };
-
+const generate = (length = DEFAULT_ID_LENGTH, alphabet = DEFAULT_ALPHABET) => {
     let rtn = '';
-    for (let i = 0; i < idLength; i++) {
+    for (let i = 0; i < length; i++) {
         rtn += alphabet.charAt(Math.floor(Math.random() * alphabet.length));
     }
     return rtn;
@@ -68,7 +63,7 @@ const generateUnique = (previous) => {
     return id;
 };
 
-module.exports = {
+export default {
     generate,
     generateUnique
 };
