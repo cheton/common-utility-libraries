@@ -119,10 +119,14 @@ async sync(source, target) {
 
 ```js
 async refresh() {
+    const fetchPorts = promisify(controller.getPorts, { errorFirst: true, thisArg: controller });
+    const fetchBaudRates = promisify(controller.getBaudRates, { errorFirst: false, thisArg: controller });
+    
     try {
-        const ports = await promisify(controller.getPorts, { thisArg: controller })();
-        const baudRates = await promisify(controller.getBaudRates, { thisArg: controller })();
-        console.log(ports, baudRates);
+        const ports = await fetchPorts();
+        const baudRates = await fetchBaudRates();
+        console.log('Ports:', ports);
+        console.log('Baud rates:', baudRates);
     } catch(err) {
         console.error(err);
     }
