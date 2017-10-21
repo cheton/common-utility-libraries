@@ -102,6 +102,33 @@ log.error(emoji.get('lightning_cloud'));
 ### Numeral
 [numeral.js](src/numeral.js)
 
+### Promisify
+[promisify.js](src/promisify.js)
+
+```js
+async sync(source, target) {
+    try {
+        const content = await promisify(fs.readFile)(`${source}/package.json`, 'utf8');
+        const pkg = JSON.parse(content);
+        await promisify(fs.writeFile)(`${target}/package.json`, JSON.stringify(pkg, null, 4), 'utf8');
+    } catch (err) {
+        console.error(err);
+    }
+}
+```
+
+```js
+async refresh() {
+    try {
+        const ports = await promisify(controller.getPorts, { thisArg: controller })();
+        const baudRates = await promisify(controller.getBaudRates, { thisArg: controller })();
+        console.log(ports, baudRates);
+    } catch(err) {
+        console.error(err);
+    }
+}
+```
+
 ### Random IP
 [random-ip.js](src/random-ip.js)
 
