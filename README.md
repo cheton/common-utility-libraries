@@ -131,6 +131,7 @@ portal(({ onClose }) => (
                      onClose
                 )}
             >
+                {'Yes'}
             </Button>
         </Modal.Footer>
     </Modal>
