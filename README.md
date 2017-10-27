@@ -102,6 +102,41 @@ log.error(emoji.get('lightning_cloud'));
 ### Numeral
 [numeral.js](src/numeral.js)
 
+### Portal
+[portal.jsx](src/portal.jsx)
+
+```jsx
+import chainedFunction from 'chained-function';
+
+portal(({ onClose }) => (
+    <Modal onClose={onClose}>
+        <Modal.Header>
+            <Modal.Title>
+                {'Delete Account'}
+            </Modal.Title>
+        </Modal.Header>
+         <Modal.Body>
+             <p>{'Are you sure you want to delete this account?'}</p>
+         </Modal.Body>
+         <Modal.Footer>
+             <Button onClick={onClose}>
+                 {'No'}
+             </Button>
+             <Button
+                 btnStyle="danger"
+                 onClick={chainedFunction(
+                     () => {
+                         action.deleteAccount(id);
+                     },
+                     onClose
+                )}
+            >
+            </Button>
+        </Modal.Footer>
+    </Modal>
+));
+```
+
 ### Promisify
 [promisify.js](src/promisify.js)
 
