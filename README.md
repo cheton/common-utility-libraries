@@ -210,6 +210,15 @@ async refresh() {
 * https://www.paulirish.com/2012/box-sizing-border-box-ftw/
 * https://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/
 
+### Resize Observer
+[ResizeObserver.js](src/ResizeObserver.js)
+
+```js
+new ResizeObserver(() => {
+    // Callback
+}).observe(document.body);
+```
+
 ### Short ID
 [shortid.js](src/shortid.js)
 
