@@ -96,6 +96,9 @@ log.error(emoji.get('lightning_cloud'));
 
 ![image](https://cloud.githubusercontent.com/assets/447801/25939476/96bd5568-3665-11e7-9b6f-b96fe0dc73d8.png)
 
+### Match Balanced Parentheses
+[match-balanced-parentheses][src/match-balanced-parentheses.js]
+
 ### Normalize Range
 [normalize-range.js](src/normalize-range.js)
 
