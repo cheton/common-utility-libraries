@@ -155,8 +155,8 @@ const sleep = (fn, timeout) => new Promise(resolve => {
 });
 
 series([
-    () => sleep(console.log(Date.now()), 1000),
-    () => sleep(console.log(Date.now()), 2000)
+    () => sleep(() => console.log(Date.now()), 1000),
+    () => sleep(() => console.log(Date.now()), 2000)
 ]).then(() => {
     console.log('Completed');
 }).catch(err => {
