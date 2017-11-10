@@ -141,6 +141,37 @@ portal(({ onClose }) => (
 ));
 ```
 
+### Promise Series
+[promise-series.js](src/promise-series.js)
+
+```js
+import series from './promise-series';
+
+const sleep = (fn, timeout) => new Promise(resolve => {
+    setTimeout(() => {
+        fn();
+        resolve();
+    }, timeout);
+});
+
+series([
+    () => sleep(console.log(Date.now()), 1000),
+    () => sleep(console.log(Date.now()), 2000)
+]).then(() => {
+    console.log('Completed');
+}).catch(err => {
+    console.error(err);
+});
+```
+
+**Output**
+
+```js
+// → 1510307749306
+// → 1510307751318
+// → Completed
+```
+
 ### Promisify
 [promisify.js](src/promisify.js)
 
