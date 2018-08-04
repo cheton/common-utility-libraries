@@ -2,7 +2,7 @@ class AsyncAction {
     constructor() {
         this.pending = true;
         this.fulfilled = false;
-        this.rjected = false;
+        this.rejected = false;
 
         this.promise = new Promise((resolve, reject) => {
             this.resolve = resolve;
