@@ -1,5 +1,51 @@
 # Common Utility Libraries
 
+### AsyncAction
+[AsyncAction.js](src/AsyncAction.js)
+
+```js
+const timeout = (ms) => new Promise((resolve, reject) => {
+    setTimeout(() => reject(new Error(`Timeout exceeded: ${ms}ms`)), ms);
+});
+
+const asyncActions = [
+    new AsyncAction(),
+    new AsyncAction(),
+    new AsyncAction()
+];
+const asyncPromises = asyncActions.map(action => action.promise);
+
+const main = async () => {
+    try {
+        const result = await Promise.race([
+            timeout(2000),
+            Promise.all(asyncPromises)
+        ]);
+    } catch (e) {
+        console.log('Timedout:');
+    } finally {
+        for (let i = 0; i < asyncActions.length; ++i) {
+            const { pending, fulfilled, rejected } = asyncActions[i];
+            console.log(`- ${i}: pending=${pending}, fulfilled=${fulfilled}, rejected=${rejected}`);
+        }
+    }
+};
+
+setTimeout(() => asyncActions[0].resolve(), 1000);
+setTimeout(() => asyncActions[1].reject(), 1500);
+
+main();
+```
+
+**Output**
+
+```js
+// → Timedout:
+// → - 0: pending=false, fulfilled=true, rejected=false
+// → - 1: pending=false, fulfilled=false, rejected=true
+// → - 2: pending=true, fulfilled=false, rejected=false
+```
+
 ### Chained Function
 [chained-function.js](src/chained-function.js)
 
