@@ -142,6 +142,18 @@ log.error(emoji.get('lightning_cloud'));
 
 ![image](https://cloud.githubusercontent.com/assets/447801/25939476/96bd5568-3665-11e7-9b6f-b96fe0dc73d8.png)
 
+### Fisher Yates Shuffle
+[fisherYatesShuffle.js](src/fisherYatesShuffle.js)
+
+
+```js
+const cards = ['C', 'D', 'H', 'S'].reduce((acc, suit) => {
+    return acc.concat(['A', '2', '3', '4', '5', '6', '7', '8', '9', 'T', 'J', 'Q', 'K'].map(card => String(card) + suit));
+}, []);
+
+fisherYatesShuffle(cards);
+```
+
 ### Match Balanced Parentheses
 [match-balanced-parentheses][src/match-balanced-parentheses.js]
 
